@@ -15,7 +15,9 @@
 <h2>Liste des bonobos inscris sur le site</h2>
 <ul>
     {% for user in users %}
-        <li>{{ user.username|e }} - <a href="add-to-friend/{{ user.id|e }}">Add to friend</a></li>
+        <li>Login : {{ user.username|e }} - Age : {{ user.age|e}} - Famille : {{ user.famille.name|e}} - Race : {{ user.race.name|e}} - Food : {{ user.food.name|e}} - {% if user in friends %}Vous etes déja ami avec ce bonobo{% else %}<a href="add-to-friend/{{ user.id|e }}">Add to friend</a>{% endif %}</li>
     {% endfor %}
 </ul>
 {% endblock %}
+
+
